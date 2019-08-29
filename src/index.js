@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./index.css";
+import LineCount from "./components/LineCount";
 
 class CharacterCounter extends React.Component {
+   constructor(props) {
+      super(props);
+      this.state = {
+         maxLineCount: 0
+      }
+   }
    render() {
       return (
          <div>
@@ -11,7 +18,7 @@ class CharacterCounter extends React.Component {
                {/*-- Top Banner --*/}
                <div className="top-banner">
                   <h1>CHARACTER COUNT</h1>
-                  <p>An Own Challenge</p>
+                  <p>An Own ReactJS Challenge</p>
                   <div id="screen-res"></div>
                </div> 
                {/*-- Navigation --*/}
@@ -30,11 +37,7 @@ class CharacterCounter extends React.Component {
             
                      <h1>Characters Count</h1>
                      <div>
-                        <div className="line">
-                           <p className="line-div">Line 1 :</p>
-                           {/*<input id="box1" className="input-box" onkeyup="countChars1(this)" placeholder="Start Typing or Paste Text">*/}
-                           <p id="charNum1" >0 / 20</p>
-                        </div>
+                        <LineCount />
                      </div>
                      <div>
                         <div className="line">

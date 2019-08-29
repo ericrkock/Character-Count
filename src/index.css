@@ -3,8 +3,9 @@
    --primary: #ddd;
    --dark: #333;
    --light: #fff;
-   --wrong: rgb(245, 92, 92);
-   --adbox: rgb(151, 151, 151);
+   --body: #ccc;
+   --wrong: crimson;
+   --adbox: #999;
    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
@@ -16,7 +17,7 @@ html {
 
 body {
    margin: 30px 50px;
-   background: #ccc;
+   background: var(--body);
    line-height: 1.4rem;
 }
 
@@ -51,11 +52,12 @@ img {
    background: var(--dark);
 }
 
-.top-banner h1 {
+.top-banner h1, p {
    text-align: center;
    color: var(--light);
    padding: auto;
 }
+
 
 /* Navigation */
 .main-nav ul {
