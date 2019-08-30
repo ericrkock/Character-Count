@@ -2,17 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-import CharacterCount from "./components/CharacterCount";
+import CharacterCount from "./components/characters/CharacterCount";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      defaultCharCount: 20,
-      maxCharWidth: 200
-    }
-  }
-   render() {
+  render() {
     return (
       <div>
         <div className="wrapper">
@@ -26,7 +19,7 @@ class App extends React.Component {
               <li><a href="#word">Word Count</a></li>
               <li><a href="#articles">Articles</a></li>
               <li><a href="https://ericrkock.github.io/portfolio/" rel="noopener noreferrer"
-              target="_blank">Portfolio</a></li>
+                target="_blank">Portfolio</a></li>
             </ul>
           </div>
           <div className="char-count" id="char">
@@ -34,27 +27,27 @@ class App extends React.Component {
               <h1>Characters Count</h1>
               <CharacterCount />
               <div>
-               <p>Start typing your text, the count is automatically</p>
+                <p>Start typing your text, the count is automatically</p>
               </div>
             </div>
             <div className="right-box">
-               <h4>Right Box</h4>
-               <p>Coming soon</p>
+              <h4>Right Box</h4>
+              <p>Coming soon</p>
             </div>
             <div className="lower-box">
-               <h4>Lower box</h4>
-               <p>Coming Soon</p>
+              <h4>Lower box</h4>
+              <p>Coming Soon</p>
             </div>
           </div>
           Rest Coming Soon
           <div className="footer">
-          <span>
-            Presented by Eric R. Kock - Aug. 2019 |
+            <span>
+              Presented by Eric R. Kock - Aug. 2019 |
             <a href="https://about.me/erickock" rel="noopener noreferrer" target="_blank">{" "}About Me</a>{" "}-
             <a href="https://codepen.io/EricRKock/" rel="noopener noreferrer" target="_blank">{" "}CodePen{" "}</a>{" "}-
             <a href="https://github.com/ericrkock/" rel="noopener noreferrer" target="_blank">{" "}GitHub
             </a>
-          </span>
+            </span>
           </div>
         </div>
       </div>
