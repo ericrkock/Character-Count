@@ -3,6 +3,8 @@
 :root {
   --body: #ccc;
   --primary: #ddd;
+  --lighttext: #fff;
+  --darktext: #555;
   --light: #fff;
   --dark: #333;
   --box: #999;
@@ -24,6 +26,7 @@ html {
 
 body {
   margin: 30px 50px;
+  line-height: 22px;
   background-color: var(--body);
 }
 
@@ -32,6 +35,19 @@ a:link, a:visited, a:hover {
   color: var(--light);
 }
 
+.btn {
+  background: var(--dark);
+  color: var(--light);
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 0;
+}
+
+.btn:hover {
+  background: var(--light);
+  color: var(--dark);
+  box-shadow: var(--shadow);
+}
 
 .wrapper {
   display: grid;
@@ -83,14 +99,14 @@ a:link, a:visited, a:hover {
   grid-gap: 20px;
   grid-template-areas: 
     'char-box char-box right-box'
-    'char-box char-box right-box'
+    'lower-box lower-box right-box'
     'lower-box lower-box right-box';
 }
 
 /* Char Box */
 .char-box {
   grid-area: char-box;
-  min-height: 400px;
+  min-height: 200px;
   background: var(--dark);
   background-size: cover;
   background-position: center;
@@ -200,6 +216,14 @@ a:link, a:visited, a:hover {
   box-shadow: var(--shadow);
 }
 
+.box h3, h4 {
+  padding-top: 10px;
+}
+.box p {
+  padding: 10px 0 20px 0;
+  color: var(--darktext);
+}
+
 /* Footer */
 .footer {
   margin-top: 32px;
@@ -232,18 +256,18 @@ a:link, a:visited, a:hover {
   }
 
   .char-box h1 {
-     font-size: 2.5rem;
+     font-size: 40px;
   }
 
   .word-count {
      grid-template-columns: 1fr;
-     padding: 1rem;
+     padding: 16px;
   }
 
   .count-settings {
-     font-size: 1rem;
+     font-size: 16px;
      grid-template-columns: 1fr;
-     line-height: 1.5rem;
+     line-height: 24px;
   }
 
   .word-count .btn {
@@ -253,7 +277,7 @@ a:link, a:visited, a:hover {
   }
 
   footer {
-     margin-top: 0.5rem;
+     margin-top: 8px;
   }
 }
 
@@ -266,25 +290,25 @@ a:link, a:visited, a:hover {
   }
   
   .char-box h1 {
-     font-size: 1.6rem;
+     font-size: 25px;
      margin-bottom: 10px;
   }
 
   .char-box .line-header {
-     font-size: 0.8rem;
-     padding-top: 0.4rem;
+     font-size: 12px;
+     padding-top: 6px;
   }
 
   .word-count {
      grid-template-columns: 1fr;
-     padding: 0.5rem;
+     padding: 8px;
   }
 
   /*
   .count-settings {
-     **font-size: 1rem;
+     **font-size: 16px;
      grid-template-columns: 1fr;
-     line-height: 1.5rem;
+     line-height: 24px;
   } */
 
   .count-button {
@@ -293,27 +317,27 @@ a:link, a:visited, a:hover {
 
   .articles {
      grid-template-columns: 1fr;
-     *padding: 1rem 1rem;
+     *padding: 16px 16px;
   }
 
   footer {
-     margin-top: 0.5rem;
+     margin-top: 8px;
   }
 }
 
 @media(max-width: 508px) {
   .char-box {
-     padding: 1rem;
+     padding: 16px;
   }
 
   .char-box .line-header .p {
-     font-size: 0.8rem;
+     font-size: 12px;
   }
   
   .char-box .input-box {
      width: 180px;
-     height: 1.4rem;
-     font-size: 0.8rem;
+     height: 22px;
+     font-size: 12px;
      margin: 12px 7px 0 7px;
      padding-left: 5px;
   }

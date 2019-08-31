@@ -39,6 +39,38 @@ class App extends React.Component {
               <p>Coming Soon</p>
             </div>
           </div>
+          
+          <div className="boxes">
+            <div className="box">
+              <i className="fas fa-chart-pie fa-4x"></i>
+              <h3>FreeCodeCamp</h3>
+              <h4>Learn Coding</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!</p>
+              <a href="https://freecodecamp.org" alt="Learn how to code" rel="noopener noreferrer" target="_blank" className="btn">Know more</a>
+            </div>
+            <div className="box">
+              <i className="fas fa-globe fa-4x"></i>
+              <h3>GeekSessions Faro</h3>
+              <h4>Meet other IT'ers</h4>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!</p>
+              <a href="https://geeksessions.io/" alt="Tech Talk" rel="noopener noreferrer" target="_blank" className="btn">See More</a>
+            </div>
+         <div className="box">
+            <i className="fas fa-cog fa-4x"></i>
+            <h3>StartUp Algarve</h3>
+            <h4>Portimão</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!</p>
+            <a href="https://geeksessions.io/" alt="Learn how to code" rel="noopener noreferrer" target="_blank" className="btn">Learn Now</a>
+         </div>
+         <div className="box">
+            <i className="fas fa-users fa-4x"></i>
+            <h3>GitHub</h3>
+            <h4>Show your Repo's</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!</p>
+            <a href="https://github.com/" alt="Share your repo's" rel="noopener noreferrer" target="_blank" className="btn">Learn Now</a>
+         </div>
+      </div>
+          
           Rest Coming Soon
           <div className="footer">
             <span>

@@ -27,7 +27,7 @@ class CharacterCount extends React.Component {
       console.log("Reset to default evoked");
       this.setState({
          limit: "20",
-         totalChar: "0",
+         totalChar: "1 /",
          maxCharWidth: "200"
       });
       console.log("Reset to:", this.state.limit);
@@ -37,7 +37,7 @@ class CharacterCount extends React.Component {
          <div>
             <div class="line">
                <InputChars />
-               <p id="charNum" >{this.state.totalChar} /</p>
+               {/*<p id="charNum" >{this.state.totalChar} /</p>*/}
                <CharLimit
                   input={this.state.limit}
                   handleChange={this.handleChange}
