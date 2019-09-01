@@ -1,12 +1,13 @@
 import React from 'react';
+import "./word.css";
 
 import Settings from './Settings';
 import TextBox from './TextBox';
 
 class WordCount extends React.Component {
    render() {
-      return(
-         <div>
+      return (
+         <div className="count-settings">
             <Settings />
             <TextBox />
             <div className="count-button">

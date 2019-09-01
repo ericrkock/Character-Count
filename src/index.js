@@ -22,7 +22,7 @@ class App extends React.Component {
       longboxTitle: "",
       longboxContent: ""
     };
- }
+  }
   render() {
     return (
       <div>
@@ -40,7 +40,7 @@ class App extends React.Component {
                 target="_blank">Portfolio</a></li>
             </ul>
           </div>
-          
+
           <div className="char-count" id="char">
             <div className="char-box">
               <h1>Characters Count</h1>
@@ -97,22 +97,26 @@ class App extends React.Component {
             />
           </div>
 
-          <LongBox 
-            longboxTitle={"Long Box"}
-            longboxContent={"Coming Soon"}
-          />
-          
+          <div id="word">
+            <LongBox
+              longboxTitle={"Long Box 1"}
+              longboxContent={"Coming Soon"}
+            />
+          </div>
+
           <div className="word-count">
             <div className="word-box">
               <h1>Words Count</h1>
               <WordCount />
             </div>
-          </div> 
+          </div>
 
-          <LongBox 
-            longboxTitle={"Long Box"}
-            longboxContent={"Coming Soon"}
-          />
+          <div id="articles">
+            <LongBox id="articles"
+              longboxTitle={"Long Box 2"}
+              longboxContent={"Coming Soon"}
+            />
+          </div>
 
           <div className="boxes">
             <Box
@@ -148,6 +152,11 @@ class App extends React.Component {
               boxButton={"Read More"}
             />
           </div>
+
+          <LongBox
+            longboxTitle={"Last Long Box"}
+            longboxContent={"Coming Soon"}
+          />
 
           <div className="footer">
             <span>
