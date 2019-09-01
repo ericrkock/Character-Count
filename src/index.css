@@ -49,6 +49,7 @@ a:link, a:visited, a:hover {
   box-shadow: var(--shadow);
 }
 
+/* Page CSS */
 .wrapper {
   display: grid;
   grid-gap: 20px;
@@ -64,7 +65,7 @@ a:link, a:visited, a:hover {
 .header h1, p {
   text-align: center;
   color: var(--light);
-  padding-top: 10px;;
+  padding-top: 20px;;
 }
 
 /* Navigation */
@@ -219,9 +220,77 @@ a:link, a:visited, a:hover {
 .box h3, h4 {
   padding-top: 10px;
 }
+
 .box p {
   padding: 10px 0 20px 0;
   color: var(--darktext);
+}
+
+/* Long Ad Box 1 2 & 3 */
+.long-box {
+  background: var(--box);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+/* Word Count */
+.word-count {
+  background: var(--dark);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 2fr 1fr;
+  padding: 48px;
+}
+
+.word-count h1 {
+  font-size: 64px;
+  margin-bottom: 15px;
+  color: var(--light);
+}
+
+.word-box {
+  display: grid;
+}
+
+.count-settings {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  font-size: 16px;
+}
+
+.count-setting .limited {
+  margin: 16px 0 16px 0; 
+  color: var(--light);
+  
+}
+
+.kw-count {
+  margin-bottom: 10px;
+  height: 24px;
+}
+
+#max-words {
+  height: 24px;
+}
+
+.count-button {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 5px 16px 0 5px;
+}
+
+.word-content {
+  display: grid;
+  color: var(--light);
+  text-align: left !important;
+}
+
+.word-content h4 {
+  text-transform: uppercase;
 }
 
 /* Footer */

@@ -35,7 +35,7 @@ class CharacterCount extends React.Component {
    render() {
       return (
          <div>
-            <div class="line">
+            <div className="line">
                <InputChars />
                {/*<p id="charNum" >{this.state.totalChar} /</p>*/}
                <CharLimit
