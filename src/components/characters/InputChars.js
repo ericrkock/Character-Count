@@ -2,11 +2,14 @@ import React from 'react';
 
 class InputChars extends React.Component {
    render() {
-      return(
+      return (
          <div>
-            <div>
+            <div className="line">
                <label className="line-header">Line</label>
-               <input type="text" className="input-box" />
+               <input type="text" className="input-box" placeholder="Start Typing or Paste Text"
+                  value={this.props.value}
+                  onChange={this.props.handleCount}
+               />
             </div>
          </div>
       );

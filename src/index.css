@@ -151,6 +151,7 @@ a:link, a:visited, a:hover {
 }
 
 .char-box .line #charNum {
+  color: var(--light);
   padding-top: 14px;
   font-size: 20px;
 } 

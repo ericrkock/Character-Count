@@ -8,41 +8,63 @@ class CharacterCount extends React.Component {
       super(props);
       this.state = {
          limit: "20",
-         totalChar: "0",
+         charCount: "",
+         totalChar: "0 /",
          maxCharWidth: "200"
       };
-      this.handleChange = this.handleChange.bind(this);
+      this.handleLimit = this.handleLimit.bind(this);
+      this.handleCount = this.handleCount.bind(this);
    }
 
-   handleChange(event) {
+   handleCount(event) {
+      this.setState({ charCount: event.target.value });
+      console.log("length", event.target.value);
+      this.countChars();
+   }
+
+   handleLimit(event) {
       this.setState({ limit: event.target.value });
-      console.log("Limit set to:", this.state.limit);
    }
 
-   countChars = () => {
-      console.log("countChars evoked");
+   countChars = (event) => {
+      console.log("countChars evoked > charCount =", this.state.charCount);
+      const maxLength = parseInt(this.state.limit);
+      const boxLength = parseInt(this.state.charCount).length;
+      const charRemain = maxLength - boxLength;
+      if (boxLength < (parseInt(this.state.limit) + 1)) {
+         let limitGood = boxLength + " / " + charRemain + " ... GOOD";
+         this.setState({ totalChar: limitGood })
+      } else {
+         let limitTooLong = -charRemain + " # TOO LONG";
+         this.setState({ totalChar: limitTooLong });
+      }
    }
 
    clearCharCount = () => {
       console.log("Reset to default evoked");
       this.setState({
          limit: "20",
-         totalChar: "1 /",
+         charCount: "Clear",
+         totalChar: "0 /",
          maxCharWidth: "200"
       });
-      console.log("Reset to:", this.state.limit);
+      console.log("Reset to:", this.state.limit, "charCount", this.state.charCount);
    }
+
    render() {
       return (
          <div className="char-count" id="char">
             <div className="char-box">
                <h1>Characters Count</h1>
-               <div className="line">
-                  <InputChars />
-                  {/*<p id="charNum" >{this.state.totalChar} /</p>*/}
+               <div>
+                  <InputChars
+                     value={this.state.charCount}
+                     handleCount={this.handleCount}
+                  />
                   <CharLimit
-                     input={this.state.limit}
-                     handleChange={this.handleChange}
+                     totalChar={this.state.totalChar}
+                     value={this.state.limit}
+                     handleLimit={this.handleLimit}
                   />
                   <CharButton
                      name={"Clear"}
@@ -50,16 +72,16 @@ class CharacterCount extends React.Component {
                   />
                </div>
                <div>
-                <p>Start typing your text, the count is automatically</p>
-              </div>
+                  <p>Start typing your text, the count is automatically</p>
+               </div>
             </div>
             <div className="right-box">
-              <h4>Right Box</h4>
-              <p>Coming soon</p>
+               <h4>Right Box</h4>
+               <p>Coming soon</p>
             </div>
             <div className="lower-box">
-              <h4>Lower box</h4>
-              <p>Coming Soon</p>
+               <h4>Lower box</h4>
+               <p>Coming Soon</p>
             </div>
          </div>
       );
