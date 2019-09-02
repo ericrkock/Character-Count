@@ -5,6 +5,7 @@ class CharButton extends React.Component {
       return (
          <div>
             <button className="button" onClick={this.props.clicked}>{this.props.name}</button>
+            <p>Reset to default 20 Characters</p>
          </div>
       );
 

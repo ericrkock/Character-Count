@@ -9,7 +9,7 @@ class CharacterCount extends React.Component {
       this.state = {
          limit: "20",
          charCount: "",
-         totalChar: "0 /",
+         totalChar: "0 / 20",
          maxCharWidth: "200"
       };
       this.handleLimit = this.handleLimit.bind(this);
@@ -18,37 +18,41 @@ class CharacterCount extends React.Component {
 
    handleCount(event) {
       this.setState({ charCount: event.target.value });
-      console.log("length", event.target.value);
       this.countChars();
    }
 
    handleLimit(event) {
-      this.setState({ limit: event.target.value });
+      let restLimit = "0 / " + event.target.value;
+      this.setState({
+         limit: event.target.value,
+         totalChar: restLimit
+      });
    }
 
-   countChars = (event) => {
-      console.log("countChars evoked > charCount =", this.state.charCount);
+   countChars = () => {
       const maxLength = parseInt(this.state.limit);
-      const boxLength = parseInt(this.state.charCount).length;
+      const boxLength = this.state.charCount.length + 1;
       const charRemain = maxLength - boxLength;
       if (boxLength < (parseInt(this.state.limit) + 1)) {
          let limitGood = boxLength + " / " + charRemain + " ... GOOD";
-         this.setState({ totalChar: limitGood })
+         this.setTotalChar(limitGood);
       } else {
          let limitTooLong = -charRemain + " # TOO LONG";
-         this.setState({ totalChar: limitTooLong });
+         this.setTotalChar(limitTooLong);
       }
    }
 
+   setTotalChar = (remainLimit) => {
+      this.setState({ totalChar: remainLimit });
+   }
+
    clearCharCount = () => {
-      console.log("Reset to default evoked");
       this.setState({
          limit: "20",
-         charCount: "Clear",
-         totalChar: "0 /",
+         charCount: "",
+         totalChar: "0 / 20",
          maxCharWidth: "200"
       });
-      console.log("Reset to:", this.state.limit, "charCount", this.state.charCount);
    }
 
    render() {
@@ -70,9 +74,6 @@ class CharacterCount extends React.Component {
                      name={"Clear"}
                      clicked={this.clearCharCount}
                   />
-               </div>
-               <div>
-                  <p>Start typing your text, the count is automatically</p>
                </div>
             </div>
             <div className="right-box">
