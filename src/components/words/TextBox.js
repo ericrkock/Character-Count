@@ -1,5 +1,4 @@
 import React from 'react';
-import "./word.css";
 
 class TextBox extends React.Component {
    render() {

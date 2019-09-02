@@ -62,10 +62,16 @@ a:link, a:visited, a:hover {
   background: var(--dark);
 }
 
-.header h1, p {
+.header h1 {
   text-align: center;
   color: var(--light);
-  padding-top: 20px;;
+  margin-top: 10px;;
+}
+
+.header p {
+  text-align: center;
+  color: var(--light);
+  padding-top: 5px;
 }
 
 /* Navigation */

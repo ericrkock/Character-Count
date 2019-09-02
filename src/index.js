@@ -2,11 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+import Navigation from './Navigation';
 import CharacterCount from "./components/characters/CharacterCount";
 import WordCount from "./components/words/WordCount";
 
-import Box from "./components/boxes/Box";
+import BoxesDevelopment from "./components/boxes/BoxeDevelopment";
+import BoxesArticles from "./components/boxes/BoxesArticles";
 import LongBox from "./components/boxes/LongBox";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -31,71 +34,10 @@ class App extends React.Component {
             <h1>CHARACTER & WORD COUNT</h1>
             <p>An Own ReactJS and responsive Challenge</p>
           </div>
-          <div className="navigation">
-            <ul>
-              <li><a href="#char">Chars Count</a></li>
-              <li><a href="#word">Words Count</a></li>
-              <li><a href="#articles">Articles</a></li>
-              <li><a href="https://ericrkock.github.io/portfolio/" rel="noopener noreferrer"
-                target="_blank">Portfolio</a></li>
-            </ul>
-          </div>
 
-          <div className="char-count" id="char">
-            <div className="char-box">
-              <h1>Characters Count</h1>
-              <CharacterCount />
-              <div>
-                <p>Start typing your text, the count is automatically</p>
-              </div>
-            </div>
-            <div className="right-box">
-              <h4>Right Box</h4>
-              <p>Coming soon</p>
-            </div>
-            <div className="lower-box">
-              <h4>Lower box</h4>
-              <p>Coming Soon</p>
-            </div>
-          </div>
-          <div className="boxes">
-            <Box
-              fas={"fas fa-chart-pie fa-4x"}
-              boxTitel={"FreeCodeCamp"}
-              boxSubtitel={"LearnCoding"}
-              boxContent={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!"}
-              boxLink={"https://freecodecamp.org"}
-              boxAlt={"Learn how to code"}
-              boxButton={"Know More"}
-            />
-            <Box
-              fas={"fas fa-globe fa-4x"}
-              boxTitel={"GeekSessions Faro"}
-              boxSubtitel={"Meet other IT'ers"}
-              boxContent={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!"}
-              boxLink={"https://geeksessions.io/"}
-              boxAlt={"Tech Talk"}
-              boxButton={"Know More"}
-            />
-            <Box
-              fas={"fas fa-cog fa-4x"}
-              boxTitel={"StartUp Algarve"}
-              boxSubtitel={"Portimão"}
-              boxContent={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!"}
-              boxLink={"https://freecodecamp.org"}
-              boxAlt={"StartUp Portimao"}
-              boxButton={"Know More"}
-            />
-            <Box
-              fas={"fas fa-users fa-4x"}
-              boxTitel={"GitHub"}
-              boxSubtitel={"Show your Repo's"}
-              boxContent={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!"}
-              boxLink={"https://github.com/"}
-              boxAlt={"Share your repo's"}
-              boxButton={"Know More"}
-            />
-          </div>
+          <Navigation />
+          <CharacterCount />
+          <BoxesDevelopment />
 
           <div id="word">
             <LongBox
@@ -104,55 +46,16 @@ class App extends React.Component {
             />
           </div>
 
-          <div className="word-count">
-            <div className="word-box">
-              <h1>Words Count</h1>
-              <WordCount />
-            </div>
-          </div>
+          <WordCount />
 
           <div id="articles">
-            <LongBox id="articles"
+            <LongBox
               longboxTitle={"Long Box 2"}
               longboxContent={"Coming Soon"}
             />
           </div>
-
-          <div className="boxes">
-            <Box
-              boxTitel={"ARTICLE 1"}
-              boxSubtitel={"Word Counting"}
-              boxContent={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!"}
-              boxLink={"https://freecodecamp.org"}
-              boxAlt={"Learn how to code"}
-              boxButton={"Read More"}
-            />
-            <Box
-              boxTitel={"ARTICLE 2"}
-              boxSubtitel={"Why 2000 words"}
-              boxContent={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!"}
-              boxLink={"https://geeksessions.io/"}
-              boxAlt={"Tech Talk"}
-              boxButton={"Read More"}
-            />
-            <Box
-              boxTitel={"ARTICLE 3"}
-              boxSubtitel={"Google Ranking"}
-              boxContent={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!"}
-              boxLink={"https://freecodecamp.org"}
-              boxAlt={"StartUp Portimao"}
-              boxButton={"Read More"}
-            />
-            <Box
-              boxTitel={"ARTICLE 4"}
-              boxSubtitel={"Unique Content"}
-              boxContent={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates molestiae praesentium voluptate atque nesciunt? Nostrum labore nam voluptas non amet minus odio totam tempora, beatae reiciendis corporis velit perferendis!"}
-              boxLink={"https://github.com/"}
-              boxAlt={"Share your repo's"}
-              boxButton={"Read More"}
-            />
-          </div>
-
+ 
+          <BoxesArticles />
           <LongBox
             longboxTitle={"Last Long Box"}
             longboxContent={"Coming Soon"}

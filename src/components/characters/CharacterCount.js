@@ -34,18 +34,32 @@ class CharacterCount extends React.Component {
    }
    render() {
       return (
-         <div>
-            <div className="line">
-               <InputChars />
-               {/*<p id="charNum" >{this.state.totalChar} /</p>*/}
-               <CharLimit
-                  input={this.state.limit}
-                  handleChange={this.handleChange}
-               />
-               <CharButton
-                  name={"Clear"}
-                  clicked={this.clearCharCount}
-               />
+         <div className="char-count" id="char">
+            <div className="char-box">
+               <h1>Characters Count</h1>
+               <div className="line">
+                  <InputChars />
+                  {/*<p id="charNum" >{this.state.totalChar} /</p>*/}
+                  <CharLimit
+                     input={this.state.limit}
+                     handleChange={this.handleChange}
+                  />
+                  <CharButton
+                     name={"Clear"}
+                     clicked={this.clearCharCount}
+                  />
+               </div>
+               <div>
+                <p>Start typing your text, the count is automatically</p>
+              </div>
+            </div>
+            <div className="right-box">
+              <h4>Right Box</h4>
+              <p>Coming soon</p>
+            </div>
+            <div className="lower-box">
+              <h4>Lower box</h4>
+              <p>Coming Soon</p>
             </div>
          </div>
       );
