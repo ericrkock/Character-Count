@@ -10,7 +10,7 @@ class CharLimit extends React.Component {
         return (
             <div className="line">
                 <div onSubmit={this.onLimitSubmit}>
-                    <label id="charNum">{this.props.totalChar}</label>
+                    <label id="charNum">Limit</label>
                     <input className="limit-count"
                         type="text"
                         value={this.props.value}

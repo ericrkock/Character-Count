@@ -8,6 +8,7 @@
   --light: #fff;
   --dark: #333;
   --box: #999;
+  --inputbox: 200px;
   --wrong: crimson;
   --border: #222;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
@@ -114,6 +115,7 @@ a:link, a:visited, a:hover {
 .char-box {
   grid-area: char-box;
   min-height: 200px;
+  color: var(--light);
   background: var(--dark);
   background-size: cover;
   background-position: center;
@@ -127,10 +129,15 @@ a:link, a:visited, a:hover {
  
 .char-box h1 {
   font-size: 64px;
-  margin-bottom: 15px;
-  color: var(--light);
+  margin-bottom: 10px;
  }
  
+ .char-box h4 {
+  font-size: 12px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+ }
+
 .char-box .line {
   display: flex;
   padding: 5px 0 0 5px;
@@ -139,11 +146,13 @@ a:link, a:visited, a:hover {
 .char-box .line-header {
   padding-top: 15px;
   font-size: 16px;
+  font-weight: 900;
   color: var(--light);
  }
  
 .char-box .input-box {
-  width: 200px;
+  /*width: var(--inputbox);*/
+  max-width: 1000px;
   height: 30px;
   font-size: 16px;
   margin: 9px 15px 0 10px;
@@ -152,22 +161,32 @@ a:link, a:visited, a:hover {
 
 .char-box .line #charNum {
   color: var(--light);
-  padding-top: 14px;
   font-size: 20px;
 } 
 
 .char-box .limit-count {
   width: 50px;
   height: 30px;
+  background-color: var(--primary);
   font-size: 16px;
+  font-weight: 900;
   margin: 10px 15px 0 10px;
   padding-left: 5px;
 }
 
- .char-box p {
-    font-size: 12px;
-    color: var(--light);
- }
+.char-box p {
+  font-size: 12px;
+  color: var(--light);
+}
+
+.char-box-button-area {
+  display: flex;
+}
+
+.char-box-button-area p {
+  padding-left: 10px;
+  padding-top: 15px;
+}
  
 .char-box .button {
   width: 100px;
