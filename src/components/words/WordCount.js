@@ -20,34 +20,34 @@ class WordCount extends React.Component {
 
    handleMax(event) {
       console.log("handleMax evoked", event.target.value);
-      this.setState({maxwords: event.target.value});
+      this.setState({ maxwords: event.target.value });
    }
 
    handleKeywords(event) {
       console.log("handleKeyword evoked", event.target.value);
-      this.setState({keywords: event.target.value});
+      this.setState({ keywords: event.target.value });
    }
 
    handleBox(event) {
       console.log("handleKeyword evoked", event.target.value);
-      this.setState({boxvalue: event.target.value});
-      this.countWords()
-   }
-
-   countWords = (event) => {
-      console.log("Word Count evoked");
-      var maximum = document.getElementById("max-words");
+      this.setState({ boxvalue: event.target.value });
+      var maximum = this.state.maxwords;
       var boxLength3 = event.target.value;
-      boxLength3 = boxLength3.replace(/(^\s*)|(\s*$)/gi,"");
-      boxLength3 = boxLength3.replace(/[ ]{2,}/gi," ");
-      boxLength3 = boxLength3.replace(/\n /, "\n");
-   
-      document.getElementById("wordNum").innerHTML = boxLength3.split(" ").length + " words";
+      if (maximum == "" || boxLength3.split(" ").length <= parseInt(maximum)) {
+
+         boxLength3 = boxLength3.replace(/(^\s*)|(\s*$)/gi, "");
+         boxLength3 = boxLength3.replace(/[ ]{2,}/gi, " ");
+         boxLength3 = boxLength3.replace(/\n /, "\n");
+
+         this.setState({ totalwords: boxLength3.split(" ").length + " words" });
+      } else {
+         this.setState({ totalwords: "Too many words" });
+      }
       //if (maximum == 0) {
       //   document.getElementById("wordNum").innerHTML = boxLength3.split(" ").length + " words";
       //} else {
       //   document.getElementById("wordNum").innerHTML = maximum;
-     // }
+      // }
    }
 
    clearWordBox = () => {
@@ -55,7 +55,7 @@ class WordCount extends React.Component {
       this.setState({
          maxwords: "",
          keywords: "",
-         boxvalue: "Cleared",
+         boxvalue: "",
          totalwords: "No words yet!"
       });
    }
@@ -64,21 +64,22 @@ class WordCount extends React.Component {
          <div className="word-count">
             <div className="word-box">
                <h1>Words Count</h1>
-               <Settings 
+               <Settings
                   placeholder1={"Max. Words"}
                   clicked1={this.handleMax}
-                  value={this.state.maxwords}
-                  placeholder2={"Keyword(s) to count"}
+                  value1={this.state.maxwords}
                   maxwords={this.state.maxwords}
+                  placeholder2={"Keyword(s) to count"}
                   clicked2={this.handleKeywords}
-                  
+                  value2={this.state.keywords}
+                  keywords={this.state.keywords}
                />
-               <TextBox 
+               <TextBox
                   placeholder={"Start Typing or Paste Text"}
+                  clicked={this.handleBox}
                   value={this.state.boxvalue}
-                  handleBox={this.handleBox}
                />
-               <ClearButton 
+               <ClearButton
                   name={"Clear Text"}
                   totalwords={this.state.totalwords}
                   clicked={this.clearWordBox}

@@ -66,6 +66,10 @@ a:link, a:visited, a:hover {
   box-shadow: var(--shadow);
 }
 
+#screen-res {
+  color: var(--light);
+}
+
 /* Page CSS */
 .wrapper {
   display: grid;
@@ -250,6 +254,7 @@ a:link, a:visited, a:hover {
 .box p {
   padding: 10px 0 20px 0;
   color: var(--darktext);
+  text-align: justify;
 }
 
 /* Long Ad Box 1 2 & 3 */
@@ -292,7 +297,6 @@ a:link, a:visited, a:hover {
 .count-setting .limited {
   margin: 16px 0 16px 0;
   color: var(--light);
-  
 }
 
 .kw-count {
@@ -304,6 +308,10 @@ a:link, a:visited, a:hover {
 #max-words {
   padding-left: 5px;
   height: 24px;
+}
+
+#box3 {
+  padding: 5px 10px 5px 10px;
 }
 
 .count-button {
