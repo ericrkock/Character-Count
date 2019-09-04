@@ -4,7 +4,11 @@ class TextBox extends React.Component {
    render() {
       return (
          <div>
-            <textarea id="box3" col="100" rows="30" onkeyup="countWords(this)" placeholder="Start Typing or Paste Text"></textarea>
+            <textarea id="box3" cols="100" rows="15" 
+               placeholder={this.props.placeholder}
+               value={this.props.value}
+               onChange={this.props.handleBox} >
+            </textarea>
          </div>
       );
    }

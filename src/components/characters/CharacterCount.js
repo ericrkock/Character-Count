@@ -32,7 +32,6 @@ class CharacterCount extends React.Component {
          let TotalCharStyle = { color: "red" };
          this.setTotalChar(limitTooLong, TotalCharStyle);
       }
-
    }
 
    handleLimit(event) {
@@ -86,7 +85,7 @@ class CharacterCount extends React.Component {
                      />
                   </div>
                   <CharButton
-                     name={"Clear"}
+                     name={"Clear Text"}
                      clicked={this.clearCharCount}
                   />
                </div>

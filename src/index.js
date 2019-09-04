@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+import ScreenRes from './ScreenRes';
 import Navigation from './Navigation';
 import CharacterCount from "./components/characters/CharacterCount";
 import WordCount from "./components/words/WordCount";
@@ -26,13 +27,36 @@ class App extends React.Component {
       longboxContent: ""
     };
   }
+  
+  screenRes = () => {
+    console.log("ScreenRes evoked");
+    var w = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+ 
+    var h = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+ 
+    var x = document.getElementById("screen-res");
+    x.innerHTML = " width: " + w + ", height: " + h + ".";
+ }
+
+
   render() {
     return (
       <div>
         <div className="wrapper">
           <div className="header">
-            <h1>CHARACTER & WORD COUNT</h1>
-            <p>An Own ReactJS and responsive Challenge</p>
+             <ScreenRes 
+              name={"Screen Resolution"}
+              clicked={this.screenRes}
+            />
+            <div>
+              <h1>CHARACTER & WORD COUNT</h1>
+              <p>An Own ReactJS and responsive Challenge</p>
+            </div>
+           
           </div>
 
           <Navigation />
