@@ -10,35 +10,35 @@ class CharacterCount extends React.Component {
          limit: "20",
          charCount: "",
          totalChar: "0 / 20",
-         styleTotalChar: {color: "#fff"},
-         inputbox: {width: "200px"}
+         styleTotalChar: { color: "#fff" },
+         inputbox: { width: "200px" }
       };
       this.handleLimit = this.handleLimit.bind(this);
       this.handleCount = this.handleCount.bind(this);
    }
 
    handleCount(event) {
-      this.setState({charCount: event.target.value});
+      this.setState({ charCount: event.target.value });
       const inputChars = event.target.value;
       const maxLength = parseInt(this.state.limit);
       const boxLength = inputChars.length;
       const charRemain = maxLength - boxLength;
-      if (boxLength < (parseInt(this.state.limit))) {
+      if (boxLength <= (parseInt(this.state.limit))) {
          let limitGood = boxLength + " / " + charRemain + " ... GOOD";
-         let TotalCharStyle = {color: "#fff"};
+         let TotalCharStyle = { color: "#fff" };
          this.setTotalChar(limitGood, TotalCharStyle);
       } else {
          let limitTooLong = -charRemain + " # TOO LONG";
-         let TotalCharStyle = {color: "red"};
+         let TotalCharStyle = { color: "red" };
          this.setTotalChar(limitTooLong, TotalCharStyle);
       }
-      
+
    }
 
    handleLimit(event) {
       while (event.target.value < 101) {
          let restLimit = "0 / " + event.target.value;
-         let inputBoxSize = {width: event.target.value*10 + "px"};
+         let inputBoxSize = { width: event.target.value * 10 + "px" };
          this.setState({
             limit: event.target.value,
             totalChar: restLimit,
@@ -49,10 +49,10 @@ class CharacterCount extends React.Component {
    }
 
    setTotalChar = (remainLimit, charStyle) => {
-      this.setState({ 
+      this.setState({
          totalChar: remainLimit,
          styleTotalChar: charStyle
-       });
+      });
    }
 
    clearCharCount = () => {
@@ -60,8 +60,8 @@ class CharacterCount extends React.Component {
          limit: "20",
          charCount: "",
          totalChar: "0 / 20",
-         styleTotalChar: {color: "#fff"},
-         inputbox: {width: "200px"}
+         styleTotalChar: { color: "#fff" },
+         inputbox: { width: "200px" }
       });
    }
 
@@ -73,10 +73,10 @@ class CharacterCount extends React.Component {
                <h4>Maximum 100 Characters</h4>
                <div>
                   <div className="line">
-                      <CharLimit
+                     <CharLimit
                         value={this.state.limit}
                         handleLimit={this.handleLimit}
-                     /> 
+                     />
                      <InputChars
                         inputbox={this.state.inputbox}
                         value={this.state.charCount}
