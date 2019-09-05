@@ -33,15 +33,17 @@ class WordCount extends React.Component {
       this.setState({ boxvalue: event.target.value });
       var maximum = this.state.maxwords;
       var boxLength3 = event.target.value;
-      if (maximum == "" || boxLength3.split(" ").length <= parseInt(maximum)) {
+      if (maximum === "" || boxLength3.split(" ").length < parseInt(maximum)) {
 
          boxLength3 = boxLength3.replace(/(^\s*)|(\s*$)/gi, "");
          boxLength3 = boxLength3.replace(/[ ]{2,}/gi, " ");
          boxLength3 = boxLength3.replace(/\n /, "\n");
 
          this.setState({ totalwords: boxLength3.split(" ").length + " words" });
-      } else {
-         this.setState({ totalwords: "Too many words" });
+      } else if (boxLength3.split(" ").length === parseInt(maximum)) {
+         this.setState({ totalwords: "Limit reached!" });
+      } else if (boxLength3.split(" ").length > parseInt(maximum)) {
+         this.setState({ totalwords: "Limit reached - Too many words!" });
       }
       //if (maximum == 0) {
       //   document.getElementById("wordNum").innerHTML = boxLength3.split(" ").length + " words";

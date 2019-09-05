@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-import ScreenRes from './ScreenRes';
 import Navigation from './Navigation';
 import CharacterCount from "./components/characters/CharacterCount";
 import WordCount from "./components/words/WordCount";
@@ -27,36 +26,32 @@ class App extends React.Component {
       longboxContent: ""
     };
   }
-  
-  screenRes = () => {
-    console.log("ScreenRes evoked");
-    var w = window.innerWidth
-    || document.documentElement.clientWidth
-    || document.body.clientWidth;
- 
-    var h = window.innerHeight
-    || document.documentElement.clientHeight
-    || document.body.clientHeight;
- 
-    var x = document.getElementById("screen-res");
-    x.innerHTML = " width: " + w + ", height: " + h + ".";
- }
 
+  screenRes = () => {
+    var w = window.innerWidth
+      || document.documentElement.clientWidth
+      || document.body.clientWidth;
+
+    var h = window.innerHeight
+      || document.documentElement.clientHeight
+      || document.body.clientHeight;
+
+    var x = document.getElementById("screen-res");
+    x.innerHTML = "Screen resolution: width: " + w + ", height: " + h + ".";
+  }
+
+  componentDidMount() {
+    this.screenRes()
+  }
 
   render() {
     return (
       <div>
         <div className="wrapper">
           <div className="header">
-             <ScreenRes 
-              name={"Screen Resolution"}
-              clicked={this.screenRes}
-            />
-            <div>
-              <h1>CHARACTER & WORD COUNT</h1>
-              <p>An Own ReactJS and responsive Challenge</p>
-            </div>
-           
+            <h1>CHARACTER & WORD COUNT</h1>
+            <p>An Own ReactJS and responsive Challenge</p>
+            <div id="screen-res"></div>
           </div>
 
           <Navigation />
@@ -78,7 +73,7 @@ class App extends React.Component {
               longboxContent={"Coming Soon"}
             />
           </div>
- 
+
           <BoxesArticles />
           <LongBox
             longboxTitle={"Last Long Box"}
@@ -87,7 +82,7 @@ class App extends React.Component {
 
           <div className="footer">
             <span>
-              Presented by Eric R. Kock - Aug. 2019 |
+              Presented by Eric R. Kock - Sep. 2019 |
             <a href="https://about.me/erickock" rel="noopener noreferrer" target="_blank">{" "}About Me</a>{" "}-
             <a href="https://codepen.io/EricRKock/" rel="noopener noreferrer" target="_blank">{" "}CodePen{" "}</a>{" "}-
             <a href="https://github.com/ericrkock/" rel="noopener noreferrer" target="_blank">{" "}GitHub
